@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a book</title>
+</head>
+<body>
+    <form action="/books/add" method="POST">
+        <input type="text" name="title" placeholder="Enter title">
+        <input type="text" name="description" placeholder="Description">
+        <input type="text" name="author" placeholder="Enter Author">
+        <label for="category">Choose a category:</label>
+    <select id="category" name="category">
+        <option value="fiction">Fiction</option>
+        <option value="romance">Romance</option>
+        <option value="adventure">Adventure</option>
+        <option value="science">Science</option>
+    </select>
+        <input type="text" name="imageUrl" placeholder="Enter Image's link">
+        <input type="number" name="price" placeholder="Enter price">
+    <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>

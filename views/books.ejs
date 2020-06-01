@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Welcome to Book-Store <%= loggedUser.name %></h1>
+    <br>
+    <h2>Here is the list of all the books</h2>
+    
+    
+    <% books.forEach((b) => { %>
+        <div>
+            <a href="books/<%= b.id%>"><h3><%= b.title%></h3></a>
+            <img src="<%= b.imageUrl %>" height="150px" width="120px">
+            <h4><%= b.author %></h4>
+            
+            <p><%= b.description %></p>
+            <p><%= b.price %></p>
+            <form action="books/<%=b.id %>/cart" method="POST">
+                <input type="submit" value="Add to cart" />
+              </form>
+              <% if(loggedUser.isAdmin) { %>
+                <button><a href="/books/update">Update book</a></button>
+                <button><a href="/books/delete">Delete book</a></button>
+    
+            <%} %>
+    
+        </div>
+    <%}) %>
+
+</body>
+</html>
